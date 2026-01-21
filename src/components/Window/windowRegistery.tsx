@@ -58,8 +58,8 @@ export const WINDOW_REGISTRY: Record<
   datetime: {
     title: 'Date & Time',
     content: <DateTime />,
-    width: 400,
-    height: 220,
+    width: 422,
+    height: 430,
     resizable: false,
     maximizable: false,
   },

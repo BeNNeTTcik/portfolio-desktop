@@ -36,8 +36,8 @@ export default function App() {
           height: def.height ?? 260,
           minimized: false,
           maximized: false,
-          resizable: def.resizable !== true,
-          maximizable: def.maximizable !== true,
+          resizable: def.resizable !== false,
+          maximizable: def.maximizable !== false,
         },
       ];
     });

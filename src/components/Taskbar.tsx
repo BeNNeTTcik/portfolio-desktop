@@ -47,8 +47,8 @@ export default function Taskbar({
         ))}
       </div>
 
-      <div className="taskbar-clock" onClick={() => onOpenItem('datetime')}>
-        <Volume />
+      <div className="taskbar-clock">
+        <Volume onOpenItem={onOpenItem} />
       </div>
     </div>
   );

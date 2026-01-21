@@ -108,12 +108,35 @@ export default function DateTime() {
     const id = setInterval(() => setNow(new Date()), 1000);
     return () => clearInterval(id);
   }, []);
-
+  const [hours, setHours] = useState(now.getHours());
+  const [minutes, setMinutes] = useState(now.getMinutes());
   const [year, setYear] = useState(now.getFullYear());
   const [month, setMonth] = useState(now.getMonth());
 
   return (
     <div className="datetime-window">
+      <fieldset>
+        <legend>Time</legend>
+        <div className="time-edit">
+          <input
+            type="number"
+            value={hours}
+            min={0}
+            max={23}
+            onChange={e => setHours(+e.target.value)}
+          />
+          :
+          <input
+            type="number"
+            value={minutes}
+            min={0}
+            max={59}
+            onChange={e => setMinutes(+e.target.value)}
+          />
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Date</legend>
       <div className="datetime-left">
         <MonthPicker
           year={year}
@@ -132,6 +155,7 @@ export default function DateTime() {
           {now.toLocaleTimeString('pl-PL')}
         </div>
       </div>
+      </fieldset>
     </div>
   );
 }

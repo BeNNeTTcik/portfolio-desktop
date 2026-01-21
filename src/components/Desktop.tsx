@@ -38,6 +38,8 @@ export default function Desktop({ windows, active, onClose, onFocus, onMove, onM
       onMinimize={() => onMinimize(w.id)}   
       onMaximize={() => onMaximize(w.id)}   
       onResize={onResize} 
+      resizable={w.resizable}
+      maximizable={w.maximizable}
         >
         {w.content}
         </Window>

@@ -1,8 +1,13 @@
 import { useEffect, useState } from 'react';
 import './VolumeControl.css';
 import { PiSpeakerHighFill } from "react-icons/pi";
+import type { WindowId } from '../../types/window';
 
-export default function TrayClock() {
+interface TrayClockProps {
+  onOpenItem: (id: WindowId) => void;
+}
+
+export default function TrayClock({ onOpenItem }: TrayClockProps) {
   const [time, setTime] = useState('');
   const [open, setOpen] = useState(false);
   const [volume, setVolume] = useState(50);
@@ -37,7 +42,7 @@ export default function TrayClock() {
   return (
     <div className="tray-wrapper">
       <div className="tray-clock">
-        {/* 🔊 PRZYCISK – TYLKO OTWIERA SUWAK */}
+        {/* SPEAKER */}
         <span
           className="tray-speaker"
           onClick={() => setOpen(!open)}
@@ -46,10 +51,11 @@ export default function TrayClock() {
           <PiSpeakerHighFill />
         </span>
 
-        <span className="tray-time">{time}</span>
+        {/* TIME */}
+        <span className="tray-time" onClick={() => onOpenItem('datetime')}>{time}</span>
       </div>
 
-      {/* 🎚️ SUWAK */}
+      {/* SOUND SLIDER */}
       {open && (
         <div className="tray-volume-popup">
           <input
