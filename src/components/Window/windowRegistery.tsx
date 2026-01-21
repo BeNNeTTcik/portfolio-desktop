@@ -34,6 +34,11 @@ export const WINDOW_REGISTRY: Record<
   display: {
     title: 'Display Settings',
     content: <Display />,
+    width: 422,
+    height: 242,
+    resizable: false,
+    maximizable: false,
+
   },
   sound: {
     title: 'Sound Settings',

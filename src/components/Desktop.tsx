@@ -16,20 +16,9 @@ interface Props {
 }
 
 export default function Desktop({ windows, active, onClose, onFocus, onMove, onMinimize, onMaximize, onResize }: Props) {
-const { settings } = useSettings();
+
   return (
     <>
-      <div className="desktop"
-        style={{
-        background: settings.desktopColor,
-        transform:
-        settings.resolution === '800x600'
-        ? 'scale(0.85)'
-        : settings.resolution === '1280x720'
-        ? 'scale(1.1)'
-        : 'scale(1)',
-        }}
-      >
       {windows
         .filter(w => !w.minimized)
         .map(w => (
@@ -62,7 +51,8 @@ const { settings } = useSettings();
         </a>
       </div>
       <h1>M.DAMPC OS</h1>
-    </div>
+
+
     </>
   )
 };

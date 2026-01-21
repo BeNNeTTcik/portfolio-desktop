@@ -66,10 +66,7 @@ export default function Display() {
         </label>
       </fieldset>
 
-      <div className="dialog-buttons">
-        <button>OK</button>
-        <button>Apply</button>
-      </div>
+
     </div>
   );
 }
