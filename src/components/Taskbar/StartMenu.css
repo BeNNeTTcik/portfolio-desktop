@@ -1,0 +1,84 @@
+.startmenu-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+}
+
+.startmenu {
+  position: fixed;
+  bottom: 36px;
+  left: 2px;
+  width: 240px;
+  height: auto;
+  background: #c0c0c0;
+  border: 2px solid;
+  border-color: #ffffff #404040 #404040 #ffffff;
+  display: flex;
+  z-index: 9001;
+  font-family: "MS Sans Serif", Tahoma, sans-serif;
+  font-size: 20px;
+}
+
+/* BLUE SIDEBAR */
+.startmenu-sidebar {
+  width: 32px;
+  background: linear-gradient(#000080, #0000a0);
+  color: white;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 15px 0;
+  font-weight: bold;
+}
+
+.startmenu-sidebar span {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* LIST */
+.startmenu-item {
+  position: relative;
+}
+
+.submenu-wrapper {
+  position: absolute;
+  top: 0;
+  left: 100%;
+}
+
+.startmenu-list {
+  list-style: none;
+  padding: 4px;
+  margin: 0;
+  width: 100%;
+  color: black;
+  
+}
+
+.startmenu-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 6px;
+  cursor: default;
+}
+
+.startmenu-list li:hover {
+  background: #000080;
+  color: white;
+}
+
+.startmenu-list .divider {
+  height: 1px;
+  background: #808080;
+  margin: 4px 0;
+}
+
+.arrow {
+  font-size: 10px;
+  color: black;
+}
+

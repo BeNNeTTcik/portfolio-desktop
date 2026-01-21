@@ -1,0 +1,62 @@
+.taskbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 36px;
+  background: #c0c0c0;
+  border-top: 2px solid #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  font-family: "MS Sans Serif", Tahoma, sans-serif;
+  z-index: 9999;
+}
+
+/* START BUTTON */
+.start-button {
+  height: 30px;
+  min-width: 70px;
+  margin-right: 8px;
+  background: #c0c0c0;
+  border: 2px solid;
+  border-color: #ffffff #404040 #404040 #ffffff;
+  font-weight: bold;
+  padding: 5px 20px;
+  cursor: pointer;
+  color: black;
+}
+
+.start-button:active {
+  border-color: #404040 #ffffff #ffffff #404040;
+}
+
+.start-button span {
+  margin-left: 6px;
+  size: 14px;
+}
+
+/* WINDOW BUTTONS */
+.taskbar-windows {
+  display: flex;
+  gap: 4px;
+  flex: 1;
+  overflow-x: auto;
+}
+
+.taskbar-window {
+  height: 28px;
+  min-width: 120px;
+  background: #c0c0c0;
+  border: 2px solid;
+  border-color: #ffffff #404040 #404040 #ffffff;
+  padding: 0 8px;
+  font-size: 12px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.taskbar-window.active {
+  border-color: #404040 #ffffff #ffffff #404040;
+  background: #d4d4d4;
+}
