@@ -1,22 +1,27 @@
 import './Display.css';
 import { useState } from 'react';
+import { useSettings } from '../Settings/SettingsContext';
+import type { Resolution } from '../Settings/SettingsContext';
 
 export default function Display() {
-  const [resolution, setResolution] = useState('1024x768');
-  const [desktopColor, setDesktopColor] = useState('#008080');
+   const { settings, setSettings } = useSettings();
+
+  const applyResolution = (res: Resolution) => {
+    setSettings(prev => ({ ...prev, resolution: res }));
+  };
 
 
   return (
-    <div className="display-window">
+<div className="display-window">
       <fieldset>
         <legend>Screen Resolution</legend>
         <select
-          value={resolution}
-          onChange={e => setResolution(e.target.value)}
+          value={settings.resolution}
+          onChange={e => applyResolution(e.target.value as Resolution)}
         >
-          <option>800 × 600</option>
-          <option>1024 × 768</option>
-          <option>1280 × 720</option>
+          <option value="800x600">800 × 600</option>
+          <option value="1024x768">1024 × 768</option>
+          <option value="1280x720">1280 × 720</option>
         </select>
       </fieldset>
 
@@ -26,16 +31,45 @@ export default function Display() {
           {['#008080', '#000080', '#808080', '#004040'].map(color => (
             <button
               key={color}
-              className={`color-box ${
-                desktopColor === color ? 'selected' : ''
-              }`}
+              className="color-box"
               style={{ background: color }}
-              onClick={() => setDesktopColor(color)}
+              onClick={() =>
+                setSettings(prev => ({ ...prev, desktopColor: color }))
+              }
             />
           ))}
         </div>
       </fieldset>
 
+      <fieldset>
+        <legend>Appearance</legend>
+        <label>
+          <input
+            type="checkbox"
+            checked={settings.classicBorders}
+            onChange={e =>
+              setSettings(prev => ({ ...prev, classicBorders: e.target.checked }))
+            }
+          />
+          Classic window borders
+        </label>
+
+        <label>
+          <input
+            type="checkbox"
+            checked={settings.animations}
+            onChange={e =>
+              setSettings(prev => ({ ...prev, animations: e.target.checked }))
+            }
+          />
+          Enable animations
+        </label>
+      </fieldset>
+
+      <div className="dialog-buttons">
+        <button>OK</button>
+        <button>Apply</button>
+      </div>
     </div>
   );
 }
