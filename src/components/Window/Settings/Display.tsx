@@ -1,5 +1,4 @@
 import './Display.css';
-import { useState } from 'react';
 import { useSettings } from '../Settings/SettingsContext';
 import type { Resolution } from '../Settings/SettingsContext';
 

@@ -2,7 +2,6 @@ import logo from '../assets/logo.svg';
 import type { WindowId, WindowInstance } from '../types/window';
 import './Desktop.css'
 import Window from './Window/Window';
-import { useSettings } from './Window/Settings/SettingsContext';
 
 interface Props {
   windows: WindowInstance[];
