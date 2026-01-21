@@ -46,7 +46,7 @@ export default function Desktop({ windows, active, onClose, onFocus, onMove, onM
       ))}
 
       <div>
-        <a href="" target='_blank' className='logo'>
+        <a href="" className='logo'>
           <img src={logo} className="logo" alt="Logo" />
         </a>
       </div>

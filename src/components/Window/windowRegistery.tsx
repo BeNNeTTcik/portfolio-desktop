@@ -2,6 +2,7 @@ import Projects from './Projects';
 import Skills from './Skills';
 import CV from './CV';
 import Portfolio from './Portfolio';
+import Run from './Run';
 import Display from './Settings/Display';
 import DateTime from '../Taskbar/DateTime';
 import type { WindowId } from '../../types/window';
@@ -54,7 +55,11 @@ export const WINDOW_REGISTRY: Record<
   },
   run: {
     title: 'Run',
-    content: <div>Run dialog content goes here.</div>,
+    content: <Run />,
+    width: 422,
+    height: 242,
+    resizable: false,
+    maximizable: false,
   },
   shutdown: {
     title: 'Shutdown',
