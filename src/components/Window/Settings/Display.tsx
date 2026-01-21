@@ -4,8 +4,7 @@ import { useState } from 'react';
 export default function Display() {
   const [resolution, setResolution] = useState('1024x768');
   const [desktopColor, setDesktopColor] = useState('#008080');
-  const [classicBorders, setClassicBorders] = useState(true);
-  const [animations, setAnimations] = useState(true);
+
 
   return (
     <div className="display-window">
@@ -37,31 +36,6 @@ export default function Display() {
         </div>
       </fieldset>
 
-      <fieldset>
-        <legend>Appearance</legend>
-        <label>
-          <input
-            type="checkbox"
-            checked={classicBorders}
-            onChange={e => setClassicBorders(e.target.checked)}
-          />
-          Classic window borders
-        </label>
-
-        <label>
-          <input
-            type="checkbox"
-            checked={animations}
-            onChange={e => setAnimations(e.target.checked)}
-          />
-          Enable animations
-        </label>
-      </fieldset>
-
-      <div className="dialog-buttons">
-        <button>OK</button>
-        <button>Apply</button>
-      </div>
     </div>
   );
 }
