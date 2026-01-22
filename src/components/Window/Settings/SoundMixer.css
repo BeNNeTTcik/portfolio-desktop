@@ -1,0 +1,51 @@
+.sound-window {
+  padding: 8px;
+  background: var(--window-bg);
+  color: var(--text-color);
+  font-size: 12px;
+}
+
+.sound-section {
+  margin-bottom: 10px;
+  border: 2px inset #fff;
+  padding: 6px;
+}
+
+.sound-section input{
+    margin-left : 50px;
+}
+
+.sound-channels {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sound-channel {
+  display: grid;
+  grid-template-columns: 1fr 120px 50px;
+  align-items: center;
+  gap: 6px;
+
+  border: 2px inset #fff;
+  padding: 4px;
+}
+
+.sound-channel input[type="range"] {
+  width: 100%;
+}
+
+.sound-channel button {
+  background: #c0c0c0;
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #808080;
+  border-right: 2px solid #808080;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.sound-channel button.active {
+  background: #808080;
+  color: white;
+}

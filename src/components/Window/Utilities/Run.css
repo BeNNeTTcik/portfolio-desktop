@@ -1,0 +1,63 @@
+.run-window {
+  padding: 10px;
+  background: var(--window-bg);
+  color: var(--text-color);
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  
+}
+
+/* Tekst instrukcji */
+.run-window p {
+  margin: 0;
+}
+
+/* Input */
+.run-window input {
+  height: 22px;
+  padding: 2px 4px;
+  font-size: 12px;
+  background: #ffffff;
+  color: #000;
+  border-top: 2px solid #808080;
+  border-left: 2px solid #808080;
+  border-bottom: 2px solid #ffffff;
+  border-right: 2px solid #ffffff;
+  outline: none;
+}
+
+/* Błąd */
+.run-error {
+  color: darkred;
+  font-size: 11px;
+}
+
+/* Przyciski */
+.run-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.run-buttons button {
+  min-width: 70px;
+  height: 22px;
+  font-size: 11px;
+  background: #c0c0c0;
+  cursor: pointer;
+
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-bottom: 2px solid #808080;
+  border-right: 2px solid #808080;
+}
+
+.run-buttons button:active {
+  border-top: 2px solid #808080;
+  border-left: 2px solid #808080;
+  border-bottom: 2px solid #ffffff;
+  border-right: 2px solid #ffffff;
+}

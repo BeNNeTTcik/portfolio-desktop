@@ -34,4 +34,5 @@ export interface WindowInstance {
   };
   resizable?: boolean;
   maximizable?: boolean;
+  resizeRequest?: number;
 }

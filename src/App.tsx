@@ -5,6 +5,8 @@ import { WINDOW_REGISTRY } from './components/Window/windowRegistery';
 import type { WindowInstance, WindowId } from './types/window';
 import { SettingsProvider } from './components/Window/Settings/SettingsContext';
 
+
+
 export default function App() {
   const [windows, setWindows] = useState<WindowInstance[]>([]);
   const [active, setActive] = useState<WindowId | null>(null);
@@ -21,7 +23,6 @@ export default function App() {
       
 
       const def = WINDOW_REGISTRY[id];
-      console.log('Opening window:', id, def);
       if (!def) return prev;
       return [
         ...prev,
@@ -38,6 +39,7 @@ export default function App() {
           maximized: false,
           resizable: def.resizable !== false,
           maximizable: def.maximizable !== false,
+        
         },
       ];
     });
@@ -130,6 +132,7 @@ export default function App() {
 
   {/*Resize window function*/}
   const resizeWindow = (id: WindowId, width: number, height: number) => {
+   
   setWindows(prev =>
     prev.map(w =>
       w.id === id
@@ -143,10 +146,11 @@ export default function App() {
   );
   };
 
+
+
   return (
     <>
       <SettingsProvider>
-   
         
       <Desktop
         windows={windows}
@@ -157,7 +161,9 @@ export default function App() {
         onMaximize={toggleMaximize}
         onMinimize={minimizeWindow}
         onResize={resizeWindow}
+        onOpenItem={openWindow}
       />
+
 
       <Taskbar
         openWindows={windows}

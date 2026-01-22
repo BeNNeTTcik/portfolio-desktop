@@ -2,6 +2,7 @@ import logo from "../assets/logo.svg";
 import type { WindowId, WindowInstance } from "../types/window";
 import "./Desktop.css";
 import Window from "./Window/Window";
+import Run from "./Window/Utilities/Run";
 
 interface Props {
   windows: WindowInstance[];
@@ -12,6 +13,8 @@ interface Props {
   onMinimize: (id: WindowId) => void;
   onMaximize: (id: WindowId) => void;
   onResize: (id: WindowId, width: number, height: number) => void;
+  onOpenItem: (id: WindowId) => void;
+  
 }
 
 export default function Desktop({
@@ -23,16 +26,17 @@ export default function Desktop({
   onMinimize,
   onMaximize,
   onResize,
+  onOpenItem,
+  
 }: Props) {
   return (
     <div className="screen">
       <div className="desktop-scale">
         <div className="desktop">
-
           {/* OKNA */}
           {windows
-            .filter(w => !w.minimized)
-            .map(w => (
+            .filter((w) => !w.minimized)
+            .map((w) => (
               <Window
                 key={w.id}
                 id={w.id}
@@ -52,7 +56,18 @@ export default function Desktop({
                 resizable={w.resizable}
                 maximizable={w.maximizable}
               >
-                {w.content}
+                {/* 🔥 TU JEST KLUCZ */}
+                {w.id === "run" ? (
+                  <Run
+                    onRun={onOpenItem} // ⬅️ openWindow z App
+                    onClose={() => onClose("run")}
+                    resizeRequest={(height) =>
+                      onResize(w.id, w.width, height)
+                    }
+                  />
+                ) : (
+                  w.content
+                )}
               </Window>
             ))}
 
@@ -61,7 +76,6 @@ export default function Desktop({
             <img src={logo} alt="Logo" />
             <h1>M.DAMPC OS</h1>
           </div>
-
         </div>
       </div>
     </div>

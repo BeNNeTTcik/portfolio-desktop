@@ -2,15 +2,15 @@ import Projects from './Projects';
 import Skills from './Skills';
 import CV from './CV';
 import Portfolio from './Portfolio';
-import Run from './Run';
 import Display from './Settings/Display';
 import DateTime from '../Taskbar/DateTime';
+import SoundMixer from './Settings/SoundMixer';
 import type { WindowId } from '../../types/window';
 import type { ReactNode } from 'react';
 
 export const WINDOW_REGISTRY: Record<
   WindowId,
-  { title: string; content: ReactNode, width?: number; height?: number; resizable?: boolean; maximizable?: boolean }
+  { title: string; content: ReactNode, width?: number; height?: number; resizable?: boolean; maximizable?: boolean; }
 > = {
   portfolio: {
     title: 'Portfolio.txt',
@@ -42,8 +42,12 @@ export const WINDOW_REGISTRY: Record<
 
   },
   sound: {
-    title: 'Sound Settings',
-    content: <div>Sound settings content goes here.</div>,
+    title: 'Sound Mixer',
+    content: <SoundMixer />,
+    width: 362,
+    height: 130,
+    resizable: false,
+    maximizable: false,
   },
   find: {
     title: 'Find',
@@ -55,10 +59,9 @@ export const WINDOW_REGISTRY: Record<
   },
   run: {
     title: 'Run',
-    content: <Run />,
-    width: 422,
-    height: 242,
-    resizable: false,
+    content: null,
+    width: 420,
+    height: 150,
     maximizable: false,
   },
   shutdown: {
