@@ -3,9 +3,9 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 36px;
-  background: #c0c0c0;
-  border-top: 2px solid #ffffff;
+  height: var(--taskbar-height);
+  background: var(--taskbar-bg);
+  border-top: 2px solid var(--window-border-light);
   display: flex;
   align-items: center;
   padding: 2px;
@@ -18,17 +18,23 @@
   height: 30px;
   min-width: 70px;
   margin-right: 8px;
-  background: #c0c0c0;
-  border: 2px solid;
-  border-color: #ffffff #404040 #404040 #ffffff;
+  background: var(--taskbar-bg);
+  border-top: 2px solid var(--window-border-light);
+  border-left: 2px solid var(--window-border-light);
+  border-bottom: 2px solid var(--window-border-dark);
+  border-right: 2px solid var(--window-border-dark);
   font-weight: bold;
   padding: 5px 20px;
   cursor: pointer;
-  color: black;
+  color: var(--text-color);
 }
 
 .start-button:active {
-  border-color: #404040 #ffffff #ffffff #404040;
+  border-top: 2px solid var(--window-border-dark);
+  border-left: 2px solid var(--window-border-dark);
+  border-bottom: 2px solid var(--window-border-light);
+  border-right: 2px solid var(--window-border-light);
+  
 }
 
 .start-button span {
@@ -59,4 +65,10 @@
 .taskbar-window.active {
   border-color: #404040 #ffffff #ffffff #404040;
   background: #d4d4d4;
+}
+
+.taskbar-clock {
+  margin-left: 8px;
+  font-size: 20px;
+  color: var(--text-color);
 }

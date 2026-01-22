@@ -5,12 +5,22 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #008080;
+  --desktop-bg: #008080;
+  --taskbar-bg: #c0c0c0;
+  --window-bg: #c0c0c0;
+  --window-border-light: #ffffff;
+  --window-border-dark: #808080;
+  --titlebar-bg-active: #000080;
+  --titlebar-bg-inactive: #808080;
+  --titlebar-text: #ffffff;
+  --text-color: #000000;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --taskbar-height: 36px;
 }
 
 a {

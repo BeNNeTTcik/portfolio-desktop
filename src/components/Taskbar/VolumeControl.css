@@ -2,15 +2,14 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  padding: 2px 5px;
+  padding: 2px 5px 0px 5px;
   background: #c0c0c0;
   border: 2px solid;
   border-color: #404040 #ffffff #ffffff #404040;
   font-family: "MS Sans Serif", Tahoma, sans-serif;
   font-size: 12px;
   height: 26px;
-  margin: 5px 5px 5px 5px;
-  height: 25px;
+  margin: 3px 3px 3px 3px;
 }
 
 .tray-speaker {
@@ -33,9 +32,9 @@
 
 .tray-volume-popup {
   position: absolute;
-  bottom: 31px;
-  right: 85px;
-  width: 32px;
+  bottom: 30px;
+  right: 65px;
+  width: 30px;
   height: 110px;
   background: #c0c0c0;
   border: 2px solid;

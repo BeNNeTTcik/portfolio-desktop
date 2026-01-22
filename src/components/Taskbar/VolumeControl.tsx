@@ -16,10 +16,9 @@ export default function TrayClock({ onOpenItem }: TrayClockProps) {
     const update = () => {
       const now = new Date();
       setTime(
-        now.toLocaleTimeString('en-US', {
+        now.toLocaleTimeString('pl-PL', {
           hour: 'numeric',
-          minute: '2-digit',
-          hour12: true,
+          minute: '2-digit'
         })
       );
     };

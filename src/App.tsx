@@ -146,6 +146,7 @@ export default function App() {
   return (
     <>
       <SettingsProvider>
+   
         
       <Desktop
         windows={windows}
@@ -165,6 +166,7 @@ export default function App() {
         onOpenItem={openWindow}
         
       />
+
       </SettingsProvider>
     </>
   );
