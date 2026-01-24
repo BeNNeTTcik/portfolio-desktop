@@ -3,6 +3,7 @@ import type { WindowId, WindowInstance } from "../types/window";
 import "./Desktop.css";
 import Window from "./Window/Window";
 import Run from "./Window/Utilities/Run";
+import { cloneElement, isValidElement } from "react";
 
 interface Props {
   windows: WindowInstance[];
@@ -59,12 +60,18 @@ export default function Desktop({
                 {/* 🔥 TU JEST KLUCZ */}
                 {w.id === "run" ? (
                   <Run
-                    onRun={onOpenItem} // ⬅️ openWindow z App
+                    onRun={onOpenItem}
                     onClose={() => onClose("run")}
                     resizeRequest={(height) =>
                       onResize(w.id, w.width, height)
                     }
                   />
+                ) : isValidElement(w.content) ? (
+                  // Dodaj resizeRequest do każdego komponentu który go potrzebuje
+                  cloneElement(w.content as React.ReactElement<any>, {
+                    resizeRequest: (height: number) =>
+                      onResize(w.id, w.width, height)
+                  })
                 ) : (
                   w.content
                 )}

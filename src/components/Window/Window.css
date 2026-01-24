@@ -1,24 +1,35 @@
 .window {
   position: absolute;
-  top: 80px;
-  left: 120px;
-  width: 360px;
   background: #c0c0c0;
   border: 2px solid;
   border-color: #ffffff #404040 #404040 #ffffff;
   font-family: "MS Sans Serif", Tahoma, sans-serif;
   box-sizing: border-box;
   overflow: hidden;
-  font-size: clamp(11px, 1vw, 13px);
+  min-height: 130px;
+}
+
+.window-content {
+  height: calc(100% - var(--titlebar-height));
+  overflow: auto;
+  box-sizing: border-box;
+  display: block;
 }
 
 .window.active {
   box-shadow: 0 0 0 1px #000080 inset;
 }
 
+/* NO SCROLL */
+.window.no-scroll,
+.window.no-scroll .window-content,
+.window.no-scroll .datetime-window {
+  overflow: hidden !important;
+}
+
 /* TITLE BAR */
 .titlebar {
-  height: 22px;
+  height: var(--titlebar-height);
   background: #808080;
   color: white;
   display: flex;

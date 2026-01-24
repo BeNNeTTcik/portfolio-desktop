@@ -1,21 +1,22 @@
 .datetime-window {
-  display: flex;
-  gap: 12px;
-  padding: 8px;
+  position: relative;
+  padding: 8px 8px 0px 8px;
   font-size: 12px;
+  box-sizing: border-box;
 }
 fieldset {
   border: 2px solid;
   border-color: #ffffff #404040 #404040 #ffffff;
-  margin-bottom: 8px;
-  padding: 6px;
-  color:black
+  color: var(--text-color);
 }
 
-.datetime-left {
+legend {
+  text-align: center;
+}
+
+.datetime-top {
   display: flex;
   flex-direction: column;
-  gap: 6px;
 }
 
 .calendar {
@@ -45,11 +46,10 @@ fieldset {
   color: white;
 }
 
-.datetime-right {
+.datetime-bottom {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
 }
 
 .analog-clock {
@@ -88,6 +88,7 @@ fieldset {
 .digital-time {
   border: 2px inset #808080;
   padding: 2px 6px;
+  margin-top: 4px;
 }
 
 .dialog-buttons {
@@ -107,10 +108,12 @@ fieldset {
 .time-edit {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 4px;
 }
 
 .time-edit input {
   width: 36px;
   text-align: center;
+  margin-bottom: 6px;
 }

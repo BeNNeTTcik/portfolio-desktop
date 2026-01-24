@@ -1,0 +1,61 @@
+.shutdown-overlay {
+  position: fixed;
+  inset: 0;
+  background: black;
+  z-index: 9999;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  animation: fadeIn 2s ease forwards;
+}
+
+body.shutdown,
+#root.shutdown {
+    background: black;
+    overflow: hidden;
+}
+
+.shutdown-logo {
+  width: 120px;
+  height: 120px;
+  animation: spin 3s linear infinite;
+  filter: brightness(0.9);
+}
+
+.shutdown-text {
+  margin-top: 16px;
+  color: #ccc;
+  font-family: "MS Sans Serif", Tahoma, sans-serif;
+  font-size: 30px;
+}
+
+.shutdown-text2 {
+  margin-top: 16px;
+  color: #000000;
+  font-family: "MS Sans Serif", Tahoma, sans-serif;
+  text-align: center;
+  justify-self: center;
+  display: flex;
+  font-size: 30px;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

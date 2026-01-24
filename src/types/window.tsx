@@ -1,5 +1,3 @@
-import type { ReactNode } from "react";
-
 export type WindowId =
   | 'projects'
   | 'skills'
@@ -15,10 +13,11 @@ export type WindowId =
   | 'datetime';
 
 
+
 export interface WindowInstance {
   id: WindowId;
   title: string;
-  content: ReactNode;
+  content: React.ReactNode
   zIndex: number;
   x: number;
   y: number;

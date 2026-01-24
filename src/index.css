@@ -21,6 +21,7 @@
   -moz-osx-font-smoothing: grayscale;
 
   --taskbar-height: 36px;
+  --titlebar-height: 22px;
 }
 
 a {
@@ -39,6 +40,8 @@ body {
   min-width: 320px;
   min-height: 100vh;
 }
+
+
 
 h1 {
   font-size: 4em;
