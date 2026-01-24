@@ -1,0 +1,100 @@
+.browser-toolbar {
+  background: #c0c0c0;
+  font-family: "MS Sans Serif", Tahoma, sans-serif;
+  font-size: 12px;
+  border-bottom: 2px solid;
+  border-color: #ffffff #404040 #404040 #ffffff;
+  color: var(--text-color)
+}
+
+/* MENU BAR */
+.browser-menubar {
+  display: flex;
+  gap: 16px;
+  padding: 2px 6px;
+  background: #c0c0c0;
+}
+
+.browser-menubar span {
+  cursor: default;
+}
+
+.browser-button {
+  height: 30px;
+  min-width: 70px;
+  margin-right: 8px;
+  background: var(--taskbar-bg);
+  border-top: 2px solid var(--window-border-light);
+  border-left: 2px solid var(--window-border-light);
+  border-bottom: 2px solid var(--window-border-dark);
+  border-right: 2px solid var(--window-border-dark);
+  font-weight: bold;
+  padding: 5px 20px;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+.browser-button:active {
+  border-top: 2px solid var(--window-border-dark);
+  border-left: 2px solid var(--window-border-dark);
+  border-bottom: 2px solid var(--window-border-light);
+  border-right: 2px solid var(--window-border-light);
+  
+}
+
+/* BUTTON BAR */
+.browser-buttons {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 4px;
+  color: var(--text-color)
+}
+
+.browser-buttons button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 26px;
+  padding: 0 6px;
+  background: #c0c0c0;
+  border: 2px solid;
+  border-color: #ffffff #404040 #404040 #ffffff;
+  font-size: 11px;
+  cursor: pointer;
+  color: var(--text-color)
+}
+
+.browser-buttons button:active {
+  border-color: #404040 #ffffff #ffffff #404040;
+}
+
+.browser-buttons svg {
+  font-size: 14px;
+}
+
+.browser-separator {
+  width: 2px;
+  height: 22px;
+  background: #808080;
+  margin: 0 4px;
+}
+
+/* ADDRESS BAR */
+.browser-address {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px;
+  border-top: 2px solid;
+  border-color: #ffffff #404040 #404040 #ffffff;
+}
+
+.browser-address input {
+  flex: 1;
+  height: 22px;
+  border: 2px inset #808080;
+  padding: 2px 4px;
+  font-family: inherit;
+  font-size: 12px;
+}

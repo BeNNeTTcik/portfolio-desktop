@@ -1,7 +1,7 @@
 import Projects from "./Projects";
 import Skills from "./Skills";
-import CV from "./CV";
-import Portfolio from "./Portfolio";
+import CV from "./CV/CV";
+import Portfolio from "./Portfolio/Portfolio";
 import Display from "./Settings/Display";
 import DateTime from "../Taskbar/DateTime";
 import SoundMixer from "./Settings/SoundMixer";
@@ -21,20 +21,28 @@ export const WINDOW_REGISTRY: Record<
   }
 > = {
   portfolio: {
-    title: "Portfolio.txt",
+    title: "Portfolio.html",
     content: <Portfolio />,
+    width: 880,
+    height: 470,
   },
   projects: {
     title: "Projects.txt",
     content: <Projects />,
+    width: 880,
+    height: 470,
   },
   skills: {
     title: "Skills.txt",
     content: <Skills />,
+    width: 880,
+    height: 470,
   },
   cv: {
     title: "CV.txt",
     content: <CV />,
+    width: 880,
+    height: 470,
   },
   about: {
     title: "About.txt",
