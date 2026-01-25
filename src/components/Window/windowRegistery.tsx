@@ -93,6 +93,6 @@ export const WINDOW_REGISTRY: Record<
   maximizable: false,
   width: 300,
   height: 100,
+  },
 
-  }
 };

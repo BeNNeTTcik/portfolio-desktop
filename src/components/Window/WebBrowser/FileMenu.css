@@ -1,0 +1,25 @@
+.browser-menu {
+  position: absolute;
+  top: 24px;
+  left: 6px;
+
+  background: #c0c0c0;
+  border: 2px outset #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.browser-menu button {
+  all: unset;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+
+.browser-menu button:hover {
+  background: navy;
+  color: white;
+}
+
+.browser-menu button:disabled {
+  color: #777;
+}

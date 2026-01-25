@@ -6,7 +6,7 @@ export default function Portfolio() {
   return (
     <>
       <WebBroweserTemplate page={page} />
-      <div>DANE BLALALA</div>
+      <div className="webpage">DANE BLALALA<br></br>DANE BLALALA<br></br>DANE BLALALA<br></br>DANE BLALALA<br></br>DANE BLALALA<br></br>DANE BLALALA<br></br>DANE BLALALA<br></br>DANE BLALALA<br></br>DANE BLALALA<br></br>DANE BLALALA<br></br>DANE BLALALA<br></br>DANE BLALALA<br></br>DANE BLALALA<br></br>DANE BLALALA<br></br>DANE BLALALA<br></br>DANE BLALALA<br></br>DANE BLALALA<br></br>DANE BLALALA<br></br>DANE BLALALA<br></br></div>
     </>
   );
 }

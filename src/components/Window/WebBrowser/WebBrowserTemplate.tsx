@@ -12,88 +12,80 @@ import {
   FaExpand,
   FaEnvelope,
   FaPrint,
+  FaGlobe,
+  FaAtom
 } from "react-icons/fa";
+import FileMenu from "./FileMenu";
+import { useState, useRef, useEffect } from "react";
 
 interface Props {
   page: string;
 }
 
 export default function WebBroweserTemplate({ page }: Props) {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [popupOpen, setPopupOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+
+    const handleClickOutside = (e: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+        setMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [menuOpen]);
+
   return (
     <div className="browser-toolbar">
       {/* MENU BAR */}
       <div className="browser-menubar">
-        <span>File</span>
-        <span>Edit</span>
-        <span>View</span>
-        <span>Go</span>
-        <span>Favorites</span>
-        <span>Help</span>
-      </div>
-
-      {/* TOOLBAR */}
-      <div className="browser-buttons">
-        <button>
+        <button
+          className="browser-button"
+          onClick={() => setMenuOpen((o) => !o)}
+        >
+          <FaAtom />
+        </button>
+        {menuOpen && (
+          <div ref={menuRef}>
+            <FileMenu
+              onOpenPopup={() => {
+                setPopupOpen(true);
+                setMenuOpen(false);
+              }}
+            />
+          </div>
+        )}
+        <button className="browser-button">
           <FaArrowLeft />
-          <span>Back</span>
         </button>
-        <button>
+        <button className="browser-button">
           <FaArrowRight />
-          <span>Forward</span>
         </button>
-        <button>
-          <FaStop />
-          <span>Stop</span>
-        </button>
-        <button>
+        <button className="browser-button">
           <FaSync />
-          <span>Refresh</span>
         </button>
-        <button>
-          <FaHome />
-          <span>Home</span>
+                <button className="browser-button">
+          <FaGlobe />
         </button>
-
-        <div className="browser-separator" />
-
-        <button>
-          <FaSearch />
-          <span>Search</span>
-        </button>
-        <button>
-          <FaStar />
-          <span>Favorites</span>
-        </button>
-        <button>
-          <FaHistory />
-          <span>History</span>
-        </button>
-        <button>
-          <FaTv />
-          <span>Channels</span>
-        </button>
-
-        <div className="browser-separator" />
-
-        <button>
-          <FaExpand />
-          <span>Fullscreen</span>
-        </button>
-        <button>
-          <FaEnvelope />
-          <span>Mail</span>
-        </button>
-        <button>
-          <FaPrint />
-          <span>Print</span>
-        </button>
-      </div>
-
-      {/* ADDRESS BAR */}
-      <div className="browser-address">
+        <div className="browser-address">
         <span>Address</span>
         <input value={`http://www.mdampc-os-${page}.com`} readOnly />
       </div>
+              <button className="browser-button">
+          <FaStar />
+        </button>
+        <button className="browser-button">
+          <FaHistory />
+        </button>
+        
+      </div>
+
+      
     </div>
   );
 }
