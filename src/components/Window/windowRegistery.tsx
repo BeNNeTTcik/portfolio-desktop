@@ -1,13 +1,10 @@
-import Projects from "./Projects";
-import Skills from "./Skills";
-import CV from "./CV/CV";
-import Portfolio from "./Portfolio/Portfolio";
 import Display from "./Settings/Display";
 import DateTime from "../Taskbar/DateTime";
 import SoundMixer from "./Settings/SoundMixer";
 import Shutdown from "./Utilities/Shutdown";
 import type { WindowId } from "../../types/window";
 import type { ReactNode } from "react";
+import WebBrowserWithNav from "./WebBrowser/WebBrowserNav";
 
 export const WINDOW_REGISTRY: Record<
   WindowId,
@@ -21,26 +18,26 @@ export const WINDOW_REGISTRY: Record<
   }
 > = {
   portfolio: {
-    title: "Portfolio.html",
-    content: <Portfolio />,
+    title: "M.OS WEB Browser",
+    content: <WebBrowserWithNav initialPage="portfolio" />,
     width: 880,
     height: 470,
   },
   projects: {
-    title: "Projects.txt",
-    content: <Projects />,
+    title: "M.OS WEB Browser",
+    content: <WebBrowserWithNav initialPage="projects" />,
     width: 880,
     height: 470,
   },
   skills: {
-    title: "Skills.txt",
-    content: <Skills />,
+    title: "M.OS WEB Browser",
+    content: <WebBrowserWithNav initialPage="skills" />,
     width: 880,
     height: 470,
   },
   cv: {
-    title: "CV.txt",
-    content: <CV />,
+    title: "M.OS WEB Browser",
+    content: <WebBrowserWithNav initialPage="cv" />,
     width: 880,
     height: 470,
   },

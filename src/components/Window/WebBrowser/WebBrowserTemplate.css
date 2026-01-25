@@ -12,7 +12,38 @@
 
 }
 
-/* MENU BAR */
+/* BOOKMARKS */
+.browser-dock {
+  display: flex;
+  gap: 3px;
+  padding: 3px 6px;
+  background: #c0c0c0;
+}
+
+.browser-dock-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 21px;
+  padding: 0 6px;
+  background: #c0c0c0;
+  border-top: 2px solid var(--window-border-light);
+  border-right: 2px solid var(--window-border-dark);
+  border-bottom: 2px solid var(--window-border-dark);
+  border-left: 2px solid var(--window-border-light);
+  font-size: 11px;
+  cursor: pointer;
+  color: var(--text-color)
+}
+
+.browser-dock-item.active {
+  border-top: 2px solid var(--window-border-dark);
+  border-left: 2px solid var(--window-border-dark);
+  border-bottom: 2px solid var(--window-border-light);
+  border-right: 2px solid var(--window-border-light);
+}
+
+/* MENU */
 .browser-menubar {
   display: flex;
   gap: 3px;
@@ -99,3 +130,83 @@
   margin: 0 4px;
 }
 
+/* HISTORY */
+.history-group {
+  margin-bottom: 10px;
+}
+
+.history-group-title {
+  font-weight: bold;
+  background: #c0c0c0;
+  padding: 2px 6px;
+  border: 1px solid #808080;
+}
+
+.history-item {
+  display: grid;
+  grid-template-columns: 1fr 2fr 60px;
+  gap: 6px;
+
+  padding: 4px 6px;
+  border-bottom: 1px solid #ddd;
+}
+
+.history-item:hover {
+  background: #e0e0e0;
+}
+
+.history-title {
+  font-weight: bold;
+}
+
+.history-url {
+  color: #000080;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.history-time {
+  text-align: right;
+  color: #555;
+}
+
+/*RELOAD*/
+.browser-button.reloading svg {
+  animation: reload-spin 1s linear infinite;
+}
+
+@keyframes reload-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.browser-loading {
+  height: 6px;
+  background: #bcbcbc;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #404040;
+  overflow: hidden;
+}
+
+.browser-loading-bar {
+  height: 100%;
+  width: 40%;
+  background: linear-gradient(
+    90deg,
+    #000080,
+    #0000ff,
+    #000080
+  );
+  animation: loading-move 1.2s linear infinite;
+}
+
+@keyframes loading-move {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(300%); }
+}
+
+.browser-button:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}

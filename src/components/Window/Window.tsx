@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { ImCross, ImMinus, ImCheckboxUnchecked } from "react-icons/im";
 import React from "react";
 
+
 interface Props {
   id: WindowId;
   title: string;
@@ -23,7 +24,6 @@ interface Props {
   resizable?: boolean;
   maximizable?: boolean;
 }
-
 
 export default function Window({
   title,
@@ -45,6 +45,7 @@ export default function Window({
   maximizable,
 }: Props) {
   const dragOffset = useRef({ x: 0, y: 0 });
+
 
   {
     /* Move window function */
@@ -100,7 +101,7 @@ export default function Window({
     window.addEventListener("mouseup", stop);
   };
 
-  
+
 
   return (
     <div
@@ -131,10 +132,13 @@ export default function Window({
         </div>
       </div>
 
-      <div className="window-content">{children}</div>
+      <div className="window-content">
+
+        {children}
+      </div>
       {resizable && (
         <div className="resize-handle" onMouseDown={startResize}></div>
-      )}    
+      )}
     </div>
   );
 }
